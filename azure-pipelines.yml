@@ -6,7 +6,6 @@ stages:
   displayName: 'Build the web application'
   trigger: 
   - release-pipeline
-  - *
   jobs: 
   - job: 'Build'
     displayName: 'Build job'
