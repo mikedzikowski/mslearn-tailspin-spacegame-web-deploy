@@ -3,6 +3,10 @@ variables:
 
 stages:
 - stage: 'Build'
+    trigger:
+  - master
+  - release-pipeline
+  - releases/*
   displayName: 'Build the web application'
   jobs: 
   - job: 'Build'
@@ -63,6 +67,10 @@ stages:
       artifact: drop
 
 - stage: 'Deploy'
+  trigger:
+  - master
+  - release-pipeline
+  - releases/*
   displayName: 'Deploy the web application'
   dependsOn: Build
   jobs:
