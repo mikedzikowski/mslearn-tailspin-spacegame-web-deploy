@@ -1,11 +1,12 @@
 variables:
   buildConfiguration: 'Release'
 
+trigger: 
+  - release-pipeline
+
 stages:
 - stage: 'Build'
   displayName: 'Build the web application'
-  trigger: 
-  - release-pipeline
   jobs: 
   - job: 'Build'
     displayName: 'Build job'
