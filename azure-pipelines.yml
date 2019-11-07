@@ -4,7 +4,9 @@ variables:
 stages:
 - stage: 'Build'
   displayName: 'Build the web application'
-  trigger: *
+  trigger: 
+  - release-pipeline
+  - *
   jobs: 
   - job: 'Build'
     displayName: 'Build job'
@@ -65,7 +67,6 @@ stages:
 
 - stage: 'Deploy'
   displayName: 'Deploy the web application'
-  trigger: *
   dependsOn: Build
   jobs:
   - deployment: Deploy
